@@ -245,7 +245,7 @@ def main():
     # Configuration
     AI_COLOR = game.RED
     HUMAN_COLOR = game.YELLOW
-    AI_ITERATIONS = 50000  # Higher = smarter but slower
+    AI_ITERATIONS = 50000
 
     print("Welcome to Connect Four!")
     print("The AI is RED (R).  You are YELLOW (Y). ")

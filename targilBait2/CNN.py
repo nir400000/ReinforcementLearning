@@ -13,7 +13,7 @@ def normalize(image_path):
     img = cv.resize(img, (150,100))
 
     # Normalize
-    img = img.astype("float32") / 255.0
+    img = img.astype("float32") / 255
     return img
 
 def load_and_split():

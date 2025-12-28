@@ -91,6 +91,7 @@ class QTable:
                 game.make(action)
                 state = game.sum
             total_reward += game.sum
+        return total_reward/self.evaluation_episodes
 
     def print_policy(self):
         print("Optimal policy (sum: action):")
@@ -113,15 +114,29 @@ def main_play():
 
 def main_QTable():
     print("Training Q-learning agent for Dice Blackjack...")
-    q_agent = QTable(training_episodes=20000, evaluation_episodes=1000)
+    q_agent = QTable(training_episodes=20000, evaluation_episodes=100)
     q_agent.train()
     print("\nEvaluating learned policy...")
-    q_agent.evaluate()
+    avg_reward = q_agent.evaluate()
     print("\nLearned policy:")
     q_agent.print_policy()
-
+    print("average reward:", avg_reward)
 
 
 if __name__ == "__main__":
     # main_play()
     main_QTable()
+"""Optimal policy (sum: action):
+Sum 0: HIT
+Sum 1: HIT
+Sum 2: HIT
+Sum 3: HIT
+Sum 4: HIT
+Sum 5: HIT
+Sum 6: HIT
+Sum 7: STAY
+Sum 8: STAY
+Sum 9: STAY
+Sum 10: STAY
+Sum 11: STAY
+average reward: 7.86"""
